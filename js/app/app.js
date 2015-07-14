@@ -1,0 +1,1 @@
+var ngTableGrid = angular.module('ngTableGrid', []);

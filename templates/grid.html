@@ -1,0 +1,28 @@
+<div class="col-md-12 squart-inside">
+	<table class="table tablegrid">
+		<thead>
+			<td><input type="checkbox" ng-model="selectedAll" ng-click="checkAll()" /><img class="icon" alt="Add" title="Add" src="images/add.png" ng-click="showadd = !showadd"><label ng-show="listSelected.length > 0"><input type="button" class="btn btn-danger" value="Delete {{listSelected.length}} {{listSelected.length == 1 ? 'item' : 'items'}}" ng-click="deleteData()"></label></td>
+			<td ng-repeat="title in datatablegrid.titlecols" ng-click="orderBy(title.id)">{{title.name}}</td>
+		</thead>
+		<tbody>
+			<tr ng-show="showadd">
+				<form ng-submit="saverow()">
+					<td style="width: 20%"><button type="submit"><img class="icon" alt="Save" title="Save" src="images/save.png" ng-click="showadd = !showadd"></button></td>
+					<td><input type="text" ng-model="newrow.city"></td>
+					<td><input type="text" ng-model="newrow.country"></td>
+					<td><input type="text" ng-model="newrow.population"></td>
+				</form>
+			</tr>
+			<tr ng-repeat="data in datatablegrid.data | orderBy:elementOrder:reverse track by $index" ng-class="{'selected': data.marked}">
+				<td style="width: 20%">
+					{{$index}}
+					<img class="icon" alt="Edit" title="Edit" src="images/edit.png">
+					<img class="icon" alt="Delete" title="Delete" src="images/delete.png" ng-click="deleteRow(data)">
+					<input type="checkbox" ng-model="data.marked">
+				</td>
+				<td ng-repeat="title in datatablegrid.titlecols" ng-click="orderBy(title.id)">{{data[title.id]}}</td>
+				<!-- <td ng-click="selectionRow(country)">{{data[$index]}}</td> -->
+			</tr>
+		</tbody>
+	</table>
+</div>
