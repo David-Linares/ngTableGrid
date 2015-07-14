@@ -1,0 +1,24 @@
+{
+  "name": "ngTableGrid",
+  "version": "0.0.1",
+  "homepage": "https://github.com/David-Linares/ngTableGrid",
+  "authors": [
+    "David Linares linaresvillamil.davidalexander@gmail.com"
+  ],
+  "description": "Table Grid with AngularJs and Bootstrap",
+  "main": "js/app/ngTableGrid.js",
+  "keywords": [
+    "table",
+    "ngTableGrid",
+    "grid",
+    "angulargrid"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
