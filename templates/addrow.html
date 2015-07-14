@@ -1,0 +1,42 @@
+<div class="modal fade" id="addrow">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">{{datatablegrid.titleformadd}}</h4>
+      </div>
+      <form name="addrowform" ng-submit="saverow(newrow)">
+        <div class="modal-body">
+          	<div class="form-group" ng-repeat="title in datatablegrid.titlecols">
+              <input class="form-control"  type="{{title.type}}" ng-model="newrow[title.id]" placeholder="{{title.name}}" ng-required="title.required" ng-pattern="title.pattern" minlength="{{title.minlength}}" readonly="{{title.readonly}}" ng-disabled="title.disabled" maxlength="{{title.maxlength}}" title="{{title.title}}">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+          <input type="submit" class="btn btn-primary" value="Guardar" ng-disabled="addrowform.$invalid">
+        </div>
+      </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="editrow">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">{{datatablegrid.titleformedit}}</h4>
+      </div>
+      <form name="addrowform" ng-submit="saverow(newrow)">
+        <div class="modal-body">
+          	<div class="form-group" ng-repeat="title in datatablegrid.titlecols">
+              <input class="form-control" type="{{title.type}}" ng-model="newrow[title.id]" placeholder="{{title.name}}" ng-required="{{title.required}}" ng-pattern="title.pattern" minlength="{{title.minlength}}" ng-disabled="{{title.disabled}}" maxlength="{{title.maxlength}}" title="{{title.title}}">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <input type="button" class="btn btn-primary" data-dismiss="modal" value="Ok" ng-disabled="addrowform.$invalid">
+        </div>
+      </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

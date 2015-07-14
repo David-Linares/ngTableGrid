@@ -1,4 +1,4 @@
-.tablegrid img.icon{
+img.icon{
 	height: 20px;
 	cursor: pointer;
 	margin: 0 15px;
@@ -8,9 +8,14 @@
 	background: #e8e8e8;
 }
 
-.squart-inside{
-	height: 500px !important;
-  	overflow: scroll;
+.square-inside{
+	height: 260px !important;
+  	overflow-y: auto;
   	overflow-x: auto;
-  	box-shadow: inset 0px 0px 233px #8B8B8B;
+  	/*box-shadow: inset 0px 0px 233px #8B8B8B;*/
+}
+
+.header-functions{
+	background-color: #ededed;
+	padding: 20px 30px;	
 }

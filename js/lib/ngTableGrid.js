@@ -1,5 +1,7 @@
-var ngTableGrid = angular.module('ngTableGrid', []);
-ngTableGrid.directive('ngTableGrid', function(){
+var ngTableGrid = angular.module('ngTableGrid', [
+	'ui.bootstrap',
+]);
+ngTableGrid.directive('ngTableGrid', function($modal){
 
 	return{
 		restrict: 'A',
@@ -8,10 +10,14 @@ ngTableGrid.directive('ngTableGrid', function(){
           	datatablegrid: "="
         },
         controller: function($scope){
+
+        	$scope.newrow = {};
         	
 			$scope.listSelected = $scope.datatablegrid.data.filter(function(ele){
 				return ele.marked === true;
 			});
+
+			$scope.msj = "hola";
 
 			$scope.$watch('datatablegrid', function (newVal, oldvalue) {
 				$scope.listSelected = $scope.datatablegrid.data.filter(function(ele){
@@ -39,14 +45,19 @@ ngTableGrid.directive('ngTableGrid', function(){
 				val.marked = !val.marked;
 			};
 
-			$scope.saverow = function(){
+			$scope.saverow = function(newrow){
 
-				console.log($scope.newrow);
+				console.log(newrow);
 				$scope.datatablegrid.data.push($scope.newrow);
 				$scope.newrow = {};
 				$scope.showadd = false;
 
 			};
+
+			$scope.editrow = function(data){
+
+				$scope.newrow = data;
+		  	};
 
 			$scope.deleteData = function(){
 

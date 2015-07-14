@@ -1,1 +1,3 @@
-var ngTableGrid = angular.module('ngTableGrid', []);
+var ngTableGrid = angular.module('ngTableGrid', [
+	'ui.bootstrap',
+]);
