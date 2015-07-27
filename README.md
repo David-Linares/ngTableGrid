@@ -32,37 +32,20 @@ Create the directive where you want to add the table.
 
 ```
 
-It's necesary an object as follow:
+It's necesary a basic object as follow:
 
 ```sh
 	
 	$scope.datatablegrid = {
-
-		titleformadd: "Agregar Registro",
-		titleformedit: "Modificar Registro",
 		titlecols: [
 			{
-				id: "numero",
-				name: 'Número de Celular',
-				pattern: /^[{0-9}]*$/,
-          		required: true,
-          		minlength: '13',
-          		disabled: false,
-          		maxlength: '13',
-          		title:"Por favor Cumplir con los parámetros",
-          		type: "text"
+				id: "firstcol",
+				name: 'First Column',
 			},
 			{
-				id: "imei",
-				name: 'Imei',
-				pattern: /^[{0-9}]*$/,
-          		required: true,
-          		minlength: '15',
-          		disabled: false,
-          		maxlength: '15',
-          		title:"Por favor Cumplir con los parámetros",
-          		type: "text"
-			}
+				id: "secondcol",
+				name: 'Second Column',
+			},
 		],
 		data: 'Your Array Data'
 	};
