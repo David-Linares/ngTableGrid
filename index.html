@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="ngTableGrid">
+<html ng-app="pruebaApp">
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -8,9 +8,9 @@
 </head>
 <body ng-controller="tablecontroller">
 	<div class="container">
-		<div class="row" ng-table-grid datatablegrid="datatablegrid">
-			
-		</div>
+		<!-- datatablegrid="datatablegrid" -->
+		<ng-table-grid data="datatablegrid" editdataform="false" adddataform="false">
+		</ng-table-grid>
 	</div>
 </body>
 <!--Libraries-->
@@ -24,10 +24,11 @@
 <script type="text/javascript" src="js/lib/ui-bootstrap-tpls.min.js"></script>
 
 <!--Own Scripts-->
-<!-- <script type="text/javascript" src="js/app/app.js"></script> -->
-<script type="text/javascript" src="js/lib/ngTableGrid.js"></script>
+<script type="text/javascript" src="js/app/app.js"></script>
 <script type="text/javascript" src="js/app/controllers/controllers.js"></script>
-<script type="text/javascript" src="js/app/services/services.js"></script>
-<!-- <script type="text/javascript" src="js/app/directives/directives.js"></script> -->
+<script type="text/javascript" src="ngTableGrid.min.js"></script>
+<!-- <script type="text/javascript" src="js/app/services/services.js"></script>
+<script type="text/javascript" src="js/app/directives/directives.js"></script>
+<script type="text/javascript" src="js/app/directives/directives.js"></script> -->
 
 </html>

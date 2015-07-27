@@ -1,21 +1,23 @@
+{{data}}
+<ng-transclude></ng-transclude>
 <div class="col-md-12 header-functions">
-	<input type="checkbox" ng-model="selectedAll" ng-click="checkAll()" /><a href="" data-toggle="modal" data-target="#addrow" ><img class="icon" alt="Add" title="Add" src="images/add.png"></a><label ng-show="listSelected.length > 0"><input type="button" class="btn btn-danger" value="Delete {{listSelected.length}} {{listSelected.length == 1 ? 'item' : 'items'}}" ng-click="deleteData()"></label>
+	<input type="checkbox" ng-model="selectedAll" ng-click="checkAll()" /><a href="" data-toggle="modal" data-target="#addrow" ng-show="adddataform"><img class="icon" alt="Add" title="Add" src="images/add.png"></a><label ng-show="listSelected.length > 0"><input type="button" class="btn btn-danger" value="Delete {{listSelected.length}} {{listSelected.length == 1 ? 'item' : 'items'}}" ng-click="deleteData()"></label>
 </div>
 <div class="col-md-12 square-inside">
 	<table class="table tablegrid">
 		<thead>
 			<td></td>
-			<td ng-repeat="title in datatablegrid.titlecols" ng-click="orderBy(title.id)">{{title.name}}</td>
+			<td ng-repeat="title in data.titlecols" ng-click="orderBy(title.id)">{{title.name}}</td>
 		</thead>
 		<tbody>
-			<tr ng-repeat="data in datatablegrid.data | orderBy:elementOrder:reverse track by $index | filter:search" ng-class="{'selected': data.marked}">
+			<tr ng-repeat="datarow in data.data | orderBy:elementOrder:reverse track by $index | filter:search" ng-class="{'selected': datarow.marked}">
 				<td style="width: 20%">
 					{{$index + 1}}
-					<a href=""  data-toggle="modal" data-target="#editrow"><img class="icon" alt="Edit" title="Edit" src="images/edit.png" ng-click="editrow(data)"></a>
-					<img class="icon" alt="Delete" title="Delete" src="images/delete.png" ng-click="deleteRow(data)">
-					<input type="checkbox" ng-model="data.marked">
+					<a href=""  data-toggle="modal" data-target="#editrow" ng-show="editdataform"><img class="icon" alt="Edit" title="Edit" src="images/edit.png" ng-click="editrow(datarow)"></a>
+					<img class="icon" alt="Delete" title="Delete" src="images/delete.png" ng-click="deleteRow(datarow)">
+					<input type="checkbox" ng-model="datarow.marked">
 				</td>
-				<td ng-repeat="title in datatablegrid.titlecols">{{data[title.id]}}</td>
+				<td ng-repeat="title in data.titlecols">{{datarow[title.id]}}</td>
 				<!-- <td ng-click="selectionRow(country)">{{data[$index]}}</td> -->
 			</tr>
 		</tbody>

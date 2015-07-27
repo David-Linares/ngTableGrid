@@ -1,4 +1,4 @@
-ngTableGrid.controller('tablecontroller', function($scope){
+ngTableGrid.controller('tablecontroller', ["$scope", function($scope){
 
 	$scope.numeros = [
 		{
@@ -52,4 +52,4 @@ ngTableGrid.controller('tablecontroller', function($scope){
 		],
 		data: $scope.numeros
 	};
-});
+}]);
